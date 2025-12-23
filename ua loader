@@ -1,0 +1,11 @@
+-- loader.lua (no key)
+local mainUrl = "https://raw.githubusercontent.com/whozsk/ua-loader/main/main.lua"
+
+local source = game:HttpGet(mainUrl)
+local fn, err = loadstring(source)
+
+if not fn then
+    error("Failed to load main.lua: " .. tostring(err))
+end
+
+return fn()
